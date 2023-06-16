@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery List</title>
+  <style>
+    body {
+      text-align: center;
+      margin-top: 25px;
+      padding: 25px;
+      background-color: aqua;
+    }
+
+    input {
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+
+    select{
+        padding: 5px;
+      margin-bottom: 10px;
+    }
+      table{
+        width: 700px;
+      height: 500px;
+      }
+    #groceryList {
+      width: 200px;
+      height: 150px;
+      overflow-y: scroll;
+      margin: 0 auto;
+      text-align: left;
+      padding: 5px;
+    }
+    
+    button {
+      padding: 5px 10px;
+    }
+  </style>
+</head>
+<body>
+    <table style=" background-color:black;color: aliceblue" border="5" cellspacing="3" align="center">
+  <tr>
+    <td colspan="3" align="center"
+				height="50"><h1>Grocery List</h1></td>
+</tr>
+  <tr><td><input type="text" id="itemInput" placeholder="Add grocery items manually"></td>
+<td>
+    <select>
+        <option>---------select Grocery---------   </option>
+        <option>rice</option>
+        <option>Fruits and vegetables</option>
+        <option>sugar</option>
+        <option>Dried fruit</option>
+        <option>dal</option>
+        <option>soap</option>
+        <option>Shampoo</option>
+        <option>cooking oil</option>
+        <option>Atta</option>
+        <option>etc</option>
+</td>
+</tr><Br>
+    <tr><td align="center"><button onclick="addItem()">OK</button></td>
+        <td align="center"><button>OK</button></td>
+    </tr>
+    <td><div id="groceryList">
+    </div></td>
+    <script src="ok.js"></script> 
+</table>
+  <script>
+    function addItem() {
+      var itemInput = document.getElementById('itemInput');
+      var item = itemInput.value;
+
+      if (item.trim() !== '') {
+        var listItem = document.createElement('p');
+        listItem.textContent = item;
+        document.getElementById('groceryList').appendChild(listItem);
+      }
+
+      itemInput.value = '';
+    }
+  </script>
+ 
+    
+
+</body>
+</html>
+
+</body>
+</html>
